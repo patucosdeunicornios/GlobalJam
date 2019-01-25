@@ -434,7 +434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverCanvas: {fileID: 1994705941}
-  currentTime: 10
+  timeLimit: 5
   kids: []
   restartButon: {fileID: 1058877674}
   exitButton: {fileID: 1463278505}

@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 
     public GameObject gameOverCanvas;
-    public float currentTime;
+    public float timeLimit = 5f;
+    private float currentTime;
     float timeCounter;
     bool gameOver;
     public GameObject[] kids;
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour {
     void Awake()
     {
         timeCounter = 0;
+        currentTime = timeLimit;
         gameOver = false;
     }
 
@@ -31,12 +33,16 @@ public class GameManager : MonoBehaviour {
         }
 
         Debug.Log("Niños a buscar: " + kidsName);
+
+
+        restartButon.onClick.AddListener(() => { RestartGame(); });
+        exitButton.onClick.AddListener(() => { exitGame(); });
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-        if (gameOver) { } else
+        if (!gameOver)
         {
 
             Debug.Log("Tiempo Restante: " + currentTime);
@@ -44,8 +50,6 @@ public class GameManager : MonoBehaviour {
             checkGame();
         }
 
-        restartButon.onClick.AddListener(() => { RestartGame(); });
-        exitButton.onClick.AddListener(() => { exitGame(); });
     }
 
 
