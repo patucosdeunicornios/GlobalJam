@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class HidderPlayer : MonoBehaviour
 {
-    public NoiseManager noiseManager;
+    private NoiseManager noiseManager;
     // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("makeNoise", 2.0f, 5f);
+        noiseManager = (NoiseManager) FindObjectsOfType<NoiseManager>()[0];
 
     }
 
