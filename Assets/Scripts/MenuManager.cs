@@ -9,8 +9,12 @@ public class MenuManager : MonoBehaviour {
     DataControler DataControler = new DataControler();
     Button newGameButton, scoreButton, exitButton;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
+
+        GameObject CanvasGameObject = GameObject.Find("ScoreCanvas");
+        CanvasGameObject.GetComponent<Canvas>().enabled = false;
+
         newGameButton = GameObject.Find("Nueva Partida").GetComponent<Button>();
         scoreButton = GameObject.Find("Score").GetComponent<Button>();
         exitButton = GameObject.Find("Exit").GetComponent<Button>();
@@ -36,7 +40,7 @@ public class MenuManager : MonoBehaviour {
     void LoadScores()
     {
         Debug.Log("Boton cargar scores pulsado");
-        DataControler.readData();
+        DataControler.showData();
     }
 
     void Exit()

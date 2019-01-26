@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 
-
-public class DataControler
+public class DataControler : MonoBehaviour
 {
 
     string dataPath;
     Score score = new Score();
+    GameObject CanvasGameObject;
 
     public void saveData(string nombre, float value)
     {
@@ -38,4 +39,26 @@ public class DataControler
             }
         }
     }
+
+    public void showData()
+    {
+
+       
+
+        readData();
+        GameObject CanvasGameObject2 = GameObject.Find("MenuCanvas");
+        CanvasGameObject2.GetComponent<Canvas>().enabled = false;
+
+        GameObject CanvasGameObject = GameObject.Find("ScoreCanvas");
+        CanvasGameObject.GetComponent<Canvas>().enabled = true;
+
+        GameObject[] gameTextObject = GameObject.FindGameObjectsWithTag("Score");
+
+        for (int i = 0; i < score.scores.Count; i++)
+        {
+            gameTextObject[i].GetComponent<Text>().text = score.scores[i].name + ":     " + score.scores[i].value;
+        }
+    }
+
+
 }
