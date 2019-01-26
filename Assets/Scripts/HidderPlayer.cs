@@ -38,7 +38,7 @@ public class HidderPlayer : MonoBehaviour
     IEnumerator waves()
     {
         yield return new WaitForSeconds(waitForWave);
-        noiseManager.hearSound(transform.position);
+        noiseManager.hearSound(this);
     }
 
 

@@ -13,10 +13,12 @@ public class Transporter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        Debug.Log("entered "+other.gameObject.tag);
+        if (other.gameObject.tag.Equals("Player"))
         {
             Debug.Log("entered");
 
+            other.transform.Translate(destination.transform.position);
             other.gameObject.transform.position = destination.transform.position;
         }
     }

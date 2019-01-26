@@ -1,21 +1,21 @@
 fileFormatVersion: 2
-guid: b70e562c355ca404790e35d06a3bf0fa
+guid: 119baa00b9617a64a87372118ee001c8
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Codo_L
-    100004: Codo_R
-    100006: Dedos_L
-    100008: Dedos_R
-    100010: DedosPies_L
-    100012: DedosPies_R
+    100000: Codo_L
+    100002: Codo_R
+    100004: Dedos_L
+    100006: Dedos_R
+    100008: DedosPies_L
+    100010: DedosPies_R
+    100012: //RootNode
     100014: Head
     100016: Head_top
     100018: Hombro_L
     100020: Hombro_R
-    100022: locator1
-    100024: locator2
+    100022: joint1
+    100024: joint2
     100026: Mano_L
     100028: Mano_R
     100030: "Mu\xF1eca_L"
@@ -32,19 +32,19 @@ ModelImporter:
     100052: Spine_1
     100054: Spine_2
     100056: Spine_3
-    400000: //RootNode
-    400002: Codo_L
-    400004: Codo_R
-    400006: Dedos_L
-    400008: Dedos_R
-    400010: DedosPies_L
-    400012: DedosPies_R
+    400000: Codo_L
+    400002: Codo_R
+    400004: Dedos_L
+    400006: Dedos_R
+    400008: DedosPies_L
+    400010: DedosPies_R
+    400012: //RootNode
     400014: Head
     400016: Head_top
     400018: Hombro_L
     400020: Hombro_R
-    400022: locator1
-    400024: locator2
+    400022: joint1
+    400024: joint2
     400026: Mano_L
     400028: Mano_R
     400030: "Mu\xF1eca_L"
@@ -62,10 +62,10 @@ ModelImporter:
     400054: Spine_2
     400056: Spine_3
     2100000: lambert1
-    2300000: polySurface1
-    3300000: polySurface1
     4300000: polySurface1
+    7400000: Take 001
     9500000: //RootNode
+    13700000: polySurface1
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -93,7 +93,35 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 13
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []

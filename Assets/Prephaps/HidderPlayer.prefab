@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffbbbe0dc83fe3144842ee0a9184c496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitForWave: 0.75
+  waitForWave: 0.2
 --- !u!82 &4473206523459720894
 AudioSource:
   m_ObjectHideFlags: 0

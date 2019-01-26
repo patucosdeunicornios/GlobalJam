@@ -1,16 +1,67 @@
 fileFormatVersion: 2
-guid: 4be7b1513fba2a8488af42a62a018434
+guid: 3ec70a9869c934f4ab75ab5c51c3f984
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: polySurface1
-    400000: //RootNode
-    400002: polySurface1
-    2100000: initialShadingGroup
-    2300000: polySurface1
-    3300000: polySurface1
+    100000: Codo_L
+    100002: Codo_R
+    100004: Dedos_L
+    100006: Dedos_R
+    100008: DedosPies_L
+    100010: DedosPies_R
+    100012: Head
+    100014: Head_top
+    100016: Hombro_L
+    100018: Hombro_R
+    100020: Mano_L
+    100022: Mano_R
+    100024: "Mu\xF1eca_L"
+    100026: "Mu\xF1eca_R"
+    100028: Neck
+    100030: Pie_L
+    100032: Pie_R
+    100034: Pierna_L
+    100036: Pierna_R
+    100038: polySurface1
+    100040: Rodilla_L
+    100042: Rodilla_R
+    100044: root
+    100046: //RootNode
+    100048: Spine_1
+    100050: Spine_2
+    100052: Spine_3
+    400000: Codo_L
+    400002: Codo_R
+    400004: Dedos_L
+    400006: Dedos_R
+    400008: DedosPies_L
+    400010: DedosPies_R
+    400012: Head
+    400014: Head_top
+    400016: Hombro_L
+    400018: Hombro_R
+    400020: Mano_L
+    400022: Mano_R
+    400024: "Mu\xF1eca_L"
+    400026: "Mu\xF1eca_R"
+    400028: Neck
+    400030: Pie_L
+    400032: Pie_R
+    400034: Pierna_L
+    400036: Pierna_R
+    400038: polySurface1
+    400040: Rodilla_L
+    400042: Rodilla_R
+    400044: root
+    400046: //RootNode
+    400048: Spine_1
+    400050: Spine_2
+    400052: Spine_3
+    2100000: lambert1
     4300000: polySurface1
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: polySurface1
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -63,8 +114,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -91,7 +142,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

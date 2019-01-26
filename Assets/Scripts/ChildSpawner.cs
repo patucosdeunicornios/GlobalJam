@@ -7,7 +7,7 @@ public class ChildSpawner : MonoBehaviour
 {
     // Start is called before the first frame update
     public Transform prefab;
-    public int totalChilds = 3;
+    public int totalChilds = 0;
     List<int> spawned = new List<int>();
     public System.Collections.Generic.List<Transform> spawners = new System.Collections.Generic.List<Transform>();
 
