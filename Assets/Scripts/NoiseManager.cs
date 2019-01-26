@@ -7,10 +7,8 @@ using UnityEngine;
 public class NoiseManager : MonoBehaviour
 {
 
-    public Component obj;
     public SoundWaves wave;
 
-    public AudioClip clip;
     AudioSource audioSource;
 
     // Start is called before the first frame update
@@ -31,7 +29,7 @@ public class NoiseManager : MonoBehaviour
 
     void clap()
     {
-        audioSource.PlayOneShot(clip);
+        audioSource.PlayOneShot(audioSource.clip);
         broadcastClap();
     }
 
