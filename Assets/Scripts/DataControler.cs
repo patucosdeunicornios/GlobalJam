@@ -11,17 +11,25 @@ public class DataControler : MonoBehaviour
     string dataPath;
     Score score = new Score();
     GameObject CanvasGameObject;
+    int totalScores;
+    private IComparer<PlayerData> value;
+    bool writeable;
 
     public void saveData(string nombre, float value)
     {
-
-        dataPath = Path.Combine(Application.persistentDataPath, "HighScore.json");
-        score.addData(new PlayerData(nombre, value));
-        string json = JsonUtility.ToJson(score);
-        using (StreamWriter streamWriter = File.CreateText(dataPath))
+        writeable = false;
+        checkData(value);
+        if (writeable)
         {
-            streamWriter.Write(json);
-        }
+            Debug.Log("Es writeable");
+            dataPath = Path.Combine(Application.persistentDataPath, "HighScore.json");
+            score.addData(new PlayerData(nombre, value));
+            string json = JsonUtility.ToJson(score);
+            using (StreamWriter streamWriter = File.CreateText(dataPath))
+            {
+                streamWriter.Write(json);
+            }
+        } else { Debug.Log("no es wirteable"); }
     }
 
     public void readData()
@@ -41,11 +49,10 @@ public class DataControler : MonoBehaviour
     }
 
     public void showData()
-    {
-
-       
+    {  
 
         readData();
+        sortData();
         GameObject CanvasGameObject2 = GameObject.Find("MenuCanvas");
         CanvasGameObject2.GetComponent<Canvas>().enabled = false;
 
@@ -60,5 +67,53 @@ public class DataControler : MonoBehaviour
         }
     }
 
+    private int CompareDistanceTravelled(PlayerData a, PlayerData b)
+    {
+        float distance_a = a.value;
+        float distance_b = b.value;
+        if (distance_a < distance_b)
+        {
+            return 1;
+        }
+        else
+        {
+            return -1;
+        }
+    }
+
+    public void sortData()
+    {
+        score.scores.Sort(CompareDistanceTravelled);
+        Debug.Log("sort");
+    }
+
+    public void checkData(float valueSave)
+    {
+        readData();
+        sortData();
+
+        if (5 < score.scores.Count)
+        {
+            writeable = true;
+        } else if(valueSave > score.scores[4].value)
+        {
+            score.scores.Remove(score.scores[4]);
+            writeable = true;
+        }
+
+        }
 
 }
+
+
+public class ReverserClass : IComparer<PlayerData>
+{
+    // Call CaseInsensitiveComparer.Compare with the parameters reversed.
+    int IComparer<PlayerData>.Compare(PlayerData x, PlayerData y)
+    {
+
+         return ((new CaseInsensitiveComparer()).Compare(y.value, x.value));
+        //return x.value.CompareTo(y.value);
+    }
+}
+

@@ -21,6 +21,8 @@ public class PlayerData
 
 public class Score
 {
+
+
     public List<PlayerData> scores = new List<PlayerData>();
 
     
@@ -43,4 +45,8 @@ public class Score
     {
         return (IEnumerator)GetEnumerator();
     }
+
+ 
 }
+
+
