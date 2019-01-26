@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
         timeCounter = 0;
         currentTime = timeLimit;
         gameOver = false;
+        
     }
 
     // Use this for initialization
