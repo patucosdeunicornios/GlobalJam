@@ -44,7 +44,6 @@ public class GameManager : MonoBehaviour
         childsToFindText = GameObject.Find("childsToFind").GetComponent<Text>();
         childsToFindText.text = "Niños Restantes: " + childsToFind;
 
-
         restartButon.onClick.AddListener(() => { RestartGame(); });
         exitButton.onClick.AddListener(() => { exitGame(); });
 
@@ -63,7 +62,6 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Tiempo Restante: " + currentTime);
             callTime();
-            checkGame();
             lessTimeText.text = "Segundos Restante: " + currentTime.ToString();
             childsToFindText.text = "Niños Restantes: " + childsToFind;
         }
@@ -78,7 +76,8 @@ public class GameManager : MonoBehaviour
             timeCounter = 0;
             //Restamos 1 segundo
             currentTime -= 1;
-            //Mostramos el log           
+            //Mostramos el log      
+            checkGame();     
         }
     }
 
@@ -115,10 +114,7 @@ public class GameManager : MonoBehaviour
             gameCanvas.SetActive(false);
             gameWinCanvas.SetActive(true);
 
-
             scoreText = GameObject.Find("Score").GetComponent<Text>();
-
-            
             scoreText.text = "Segundos restantes: " + currentTime;
         }
     }
