@@ -6,31 +6,59 @@ public class NoiseManager : MonoBehaviour
 {
 
     public Component obj;
+    public SoundWaves wave;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    void positionObject(Vector3 positionSound)
+    Vector3 getPointVector(Vector3 positionSound)
     {
-        Vector3 difference = positionSound- transform.position;
+        Vector3 difference = positionSound - transform.position;
         Vector3 directionOnly = difference.normalized;
         Vector3 pointAlongDirection = transform.position + (directionOnly * 1f);
-        Debug.DrawLine(transform.position, pointAlongDirection, Color.red, 5);
-        obj.transform.position = pointAlongDirection;
+
+        return pointAlongDirection;
     }
 
 
     public void hearSound(Vector3 positionSound)
     {
         Debug.Log("Escuchando...");
-        positionObject(positionSound);
+        spawnWaves(positionSound);
+    }
+
+    public float getIntensity(Vector3 positionSound){
+        
+        float distance = Vector3.Distance(positionSound, transform.position);
+        
+        Debug.Log("Distance:"+distance);
+        return 9 - (distance / 9) * 3;
+    }
+
+    public void spawnWaves(Vector3 positionSound)
+    {
+
+
+        Vector3 direction = getPointVector(positionSound);
+
+        
+        Debug.DrawLine(transform.position, direction, Color.red, 5);
+        int intensity = (int) getIntensity(positionSound);
+        if(intensity<1)
+         return;
+        SoundWaves obj = Instantiate<SoundWaves>(wave, transform);
+        obj.transform.position = direction;
+        obj.transform.LookAt(positionSound);
+
+        obj.setIntensity(intensity);
     }
 }
