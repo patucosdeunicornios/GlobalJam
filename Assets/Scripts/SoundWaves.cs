@@ -70,19 +70,15 @@ public class SoundWaves : MonoBehaviour
 
         if (opacity > 3) opacity = 3;
 
-        Debug.Log(component.name);
-
-        
-        // Color color = rend.material.color;
-        // color.a = 0.25f * opacity;
-        // rend.material.SetColor("_Color", color);
+        Color color = rend.material.color;
+        color.a = 0.25f * opacity;
+        rend.material.SetColor("_Color", color);
     }
 
     public void setIntensity(int intensity)
     {
         
         setWaves();
-        Debug.Log("Intensity" + intensity);
         activate(lower, intensity, 0);
         if (intensity > 3)
         {

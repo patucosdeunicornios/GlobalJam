@@ -22,7 +22,6 @@ public class HidderPlayer : MonoBehaviour
 
     void makeNoise()
     {
-        Debug.Log("Haciendo ruido");
         noiseManager.hearSound(transform.position);
     }
 }

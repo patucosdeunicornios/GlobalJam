@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour {
     string kidsName;
     public Button restartButon, exitButton;
     Text lessTimeText, childsToFindText;
-    public Text scoreText;
+    Text scoreText;
 
     public int childsToFind;
 
@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour {
         childsToFindText = GameObject.Find("childsToFind").GetComponent<Text>();
         childsToFindText.text = "Niños Restantes: "+ childsToFind;
 
-        //scoreText = GameObject.Find("Score").GetComponent<Text>();
+        scoreText = GameObject.Find("Score").GetComponent<Text>();
 
         restartButon.onClick.AddListener(() => { RestartGame(); });
         exitButton.onClick.AddListener(() => { exitGame(); });

@@ -32,15 +32,12 @@ public class NoiseManager : MonoBehaviour
 
     public void hearSound(Vector3 positionSound)
     {
-        Debug.Log("Escuchando...");
         spawnWaves(positionSound);
     }
 
     public float getIntensity(Vector3 positionSound){
         
         float distance = Vector3.Distance(positionSound, transform.position);
-        
-        Debug.Log("Distance:"+distance);
         return 9 - (distance / 9) * 3;
     }
 
@@ -49,8 +46,6 @@ public class NoiseManager : MonoBehaviour
 
 
         Vector3 direction = getPointVector(positionSound);
-
-        
         Debug.DrawLine(transform.position, direction, Color.red, 5);
         int intensity = (int) getIntensity(positionSound);
         if(intensity<1)
