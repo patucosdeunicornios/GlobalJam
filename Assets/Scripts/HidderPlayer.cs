@@ -7,6 +7,12 @@ public class HidderPlayer : MonoBehaviour
     private NoiseManager noiseManager;
     public float waitForWave = 0.1f;
     AudioSource audioSource;
+    public AudioClip loseSound;
+
+    static int materialIdx = 0;
+
+    public List<Material> materials;
+
 
     // Start is called before the first frame update
     void Start()
@@ -14,12 +20,30 @@ public class HidderPlayer : MonoBehaviour
         // InvokeRepeating("makeNoise", 2.0f, 5f);
         noiseManager = (NoiseManager)FindObjectsOfType<NoiseManager>()[0];
         audioSource = GetComponent<AudioSource>();
+        ChangeMaterial(materials[materialIdx]);
+    }
+
+    void ChangeMaterial(Material newMat)
+    {
+        Renderer[] children;
+        children = GetComponentsInChildren<Renderer>();
+        foreach (Renderer rend in children)
+        {
+            var mats = new Material[rend.materials.Length];
+            for (var j = 0; j < rend.materials.Length; j++)
+            {
+                mats[j] = newMat;
+            }
+            rend.materials = mats;
+        }
+
+        materialIdx++;
     }
 
     // Update is called once per frame
     void makeNoise()
     {
-         //AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
+        //AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
         audioSource.PlayOneShot(audioSource.clip);
         StartCoroutine(waves());
     }
@@ -41,7 +65,10 @@ public class HidderPlayer : MonoBehaviour
         noiseManager.hearSound(this);
     }
 
-    public void destroy(){
+    public void destroy()
+    {
+        GetComponent<Animator>().SetBool("lost", true);
+        audioSource.PlayOneShot(loseSound);
         StartCoroutine(destroyObj());
     }
 

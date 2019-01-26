@@ -13,7 +13,8 @@ public class NoiseManager : MonoBehaviour
     SoundWaves currentWave;
     HidderPlayer enemy;
 
-     private Animator anim;
+    private Animator anim;
+    public AudioClip stepClip;
 
     // Start is called before the first frame update
     void Start()
@@ -39,9 +40,22 @@ public class NoiseManager : MonoBehaviour
 
     void clap()
     {
+        
         anim.Play("clap");
-        audioSource.PlayOneShot(audioSource.clip);
         broadcastClap();
+    }
+
+
+    void Palmada()
+    {
+        audioSource.PlayOneShot(audioSource.clip);
+    }
+
+    
+    void step()
+    {
+        Debug.Log("play stemp");
+        audioSource.PlayOneShot(stepClip, 0.2f);
     }
 
 
@@ -100,7 +114,7 @@ public class NoiseManager : MonoBehaviour
         {
             float distanceNew = Vector3.Distance(positionSound, transform.position);
             float distanceCurrent = Vector3.Distance(enemy.transform.position, transform.position);
-            if(distanceNew > distanceCurrent)
+            if (distanceNew > distanceCurrent)
                 return;
         }
 
@@ -110,7 +124,4 @@ public class NoiseManager : MonoBehaviour
     }
 
 
-    public void Palmada(){
-        Debug.Log("Palmada");
-    }
 }

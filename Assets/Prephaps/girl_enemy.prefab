@@ -169,7 +169,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100002, guid: ab410ae58ed098541993e058a92461fb, type: 3}
+  - {fileID: 2100000, guid: 2ab2ecb0ccbc98141aeece6bc9f6d3d7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -453,7 +453,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100002, guid: ab410ae58ed098541993e058a92461fb, type: 3}
+  - {fileID: 2100000, guid: 2ab2ecb0ccbc98141aeece6bc9f6d3d7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -612,7 +612,7 @@ Animator:
   m_GameObject: {fileID: 988056738}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: ab410ae58ed098541993e058a92461fb, type: 3}
-  m_Controller: {fileID: 9100000, guid: 9c9ebd7b12cb90e4dbad385eee78958d, type: 2}
+  m_Controller: {fileID: 9100000, guid: f785eecf38f52934fb11a1cae3b98f98, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -657,6 +657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
   agent: {fileID: 988056739}
+  laught: {fileID: 8300000, guid: 612f31630aec3d04aad3aeecffa82ab2, type: 3}
 --- !u!114 &5945963489551481537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -670,6 +671,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitForWave: 0.1
+  loseSound: {fileID: 8300000, guid: 9119665e8b959d74a9f52b481f506a86, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 2ab2ecb0ccbc98141aeece6bc9f6d3d7, type: 2}
+  - {fileID: 2100000, guid: 1541288984ee4c545b38521fbe9da703, type: 2}
+  - {fileID: 2100000, guid: f1c2f1608841c9e4cba6b688507be9d6, type: 2}
+  - {fileID: 2100000, guid: 355c1710a938fe548b936cd98037963a, type: 2}
 --- !u!82 &9175017045181267797
 AudioSource:
   m_ObjectHideFlags: 0
@@ -680,7 +687,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9b9868b36a27d2e4a89a6d302070cedd, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6bd2c635ecb8c624a9999e2caecc3c4f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.75
   m_Pitch: 1
@@ -827,7 +834,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ab410ae58ed098541993e058a92461fb, type: 3}
+  - {fileID: 2100000, guid: 2ab2ecb0ccbc98141aeece6bc9f6d3d7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1008,7 +1015,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100002, guid: ab410ae58ed098541993e058a92461fb, type: 3}
+  - {fileID: 2100000, guid: 2ab2ecb0ccbc98141aeece6bc9f6d3d7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1099,7 +1106,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100002, guid: ab410ae58ed098541993e058a92461fb, type: 3}
+  - {fileID: 2100000, guid: 2ab2ecb0ccbc98141aeece6bc9f6d3d7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
