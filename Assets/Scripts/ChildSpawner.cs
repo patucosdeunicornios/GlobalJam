@@ -13,17 +13,22 @@ public class ChildSpawner : MonoBehaviour
 
     void Start()
     {
-        spawnChilds();
+        if (totalChilds > 0)
+            spawnChilds();
     }
 
-    int getRandomInt(){
-         return Random.Range(0, spawners.ToArray().Length-1);
+    int getRandomInt()
+    {
+        return Random.Range(0, spawners.ToArray().Length - 1);
     }
-    void spawnChilds(){
-        for(int i=0; i<totalChilds; i++){
-            int position =  getRandomInt();
-            while(spawned.Contains(position)){
-                position =  getRandomInt();
+    void spawnChilds()
+    {
+        for (int i = 0; i < totalChilds; i++)
+        {
+            int position = getRandomInt();
+            while (spawned.Contains(position))
+            {
+                position = getRandomInt();
             }
 
             Instantiate(prefab, spawners[position]);

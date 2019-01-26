@@ -8,7 +8,7 @@ public class SoundWaves : MonoBehaviour
     Component middle;
     Component lower;
 
-    public float secondsToLive = 3f;
+    public float secondsToLive = 1.5f;
     public float currentAge = 0;
 
     void Start()
