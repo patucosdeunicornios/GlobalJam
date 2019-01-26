@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
+    DataControler DataControler = new DataControler();
+
     public GameObject gameOverCanvas, gameWinCanvas;
     GameObject gameCanvas;
     public float timeLimit = 5f;
@@ -104,6 +106,9 @@ public class GameManager : MonoBehaviour {
         if (childsToFind <= 0)
         {
             gameOver = true;
+            //int value = (int)currentTime;
+            //Debug.Log(DataControler);
+            DataControler.saveData("fran", currentTime);
             scoreText.text = "Segundos restantes: "+ currentTime;
             gameCanvas.SetActive(false);
             gameWinCanvas.SetActive(true);
