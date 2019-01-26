@@ -6,6 +6,7 @@ public class HeroController : MonoBehaviour
 {
     public float Speed = 5f;
     public float JumpForce = 1.2f;
+    public float MaxSpeed = 10f;
     public float Gravity = -9.81f;
     public float GroundDistance = 0.2f;
     public float Run = 2f;
@@ -35,14 +36,12 @@ public class HeroController : MonoBehaviour
     {
         if (isTransporting)
             return;
-        _isGrounded = Physics.CheckSphere(_groundChecker.position, GroundDistance, Ground, QueryTriggerInteraction.Ignore);
-
 
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            Speed *= Run;
+            Speed = MaxSpeed;
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
@@ -57,13 +56,12 @@ public class HeroController : MonoBehaviour
 
         float moveAnim = _controller.velocity.magnitude;
         anim.SetFloat("speed", moveAnim);
-        _velocity.y += Gravity * Time.deltaTime;
 
-        if (_isGrounded && _velocity.y < 0)
-            _velocity.y = 0f;
+    }
 
-        _controller.Move(_velocity * Time.deltaTime);
 
+    void oldFixed(){
+        
     }
     void OnCollisionEnter(Collision col)
     {
