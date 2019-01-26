@@ -13,9 +13,12 @@ public class NoiseManager : MonoBehaviour
     SoundWaves currentWave;
     HidderPlayer enemy;
 
+     private Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
 
     }
@@ -36,6 +39,7 @@ public class NoiseManager : MonoBehaviour
 
     void clap()
     {
+        anim.Play("clap");
         audioSource.PlayOneShot(audioSource.clip);
         broadcastClap();
     }
@@ -103,5 +107,10 @@ public class NoiseManager : MonoBehaviour
         enemy = player;
         SoundWaves obj = Instantiate<SoundWaves>(wave, transform);
         currentWave = obj;
+    }
+
+
+    public void Palmada(){
+        Debug.Log("Palmada");
     }
 }

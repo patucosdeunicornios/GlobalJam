@@ -36,9 +36,31 @@ public class ChildSpawner : MonoBehaviour
         }
     }
 
+    int  getIndexSpawn(){
+        int position = getRandomInt();
+        while (spawned.Contains(position) && spawned.ToArray().Length < spawners.ToArray().Length)
+        {
+            position = getRandomInt();
+        }
+
+        return position;
+    }
+
     // Update is called once per frame
     void Update()
     {
 
+    }
+
+    public Transform getNewSpawn()
+    {
+        if(spawned.ToArray().Length >= spawners.ToArray().Length){
+            Debug.Log("No more spawns");
+            return null;
+        }
+
+        int position = getIndexSpawn();
+        spawned.Add(position);
+        return spawners[position];
     }
 }

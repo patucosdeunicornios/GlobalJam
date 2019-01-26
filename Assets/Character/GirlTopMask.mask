@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GirlTopMask
+  m_Mask: 00000000010000000100000000000000000000000100000001000000010000000100000000000000000000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Franela_low
+    m_Weight: 1
+  - m_Path: ojos_low1
+    m_Weight: 1
+  - m_Path: Pantalon_low
+    m_Weight: 1
+  - m_Path: Parpados_low
+    m_Weight: 1
+  - m_Path: Pelo_low
+    m_Weight: 1
+  - m_Path: root
+    m_Weight: 1
+  - m_Path: root/Pierna_L
+    m_Weight: 0
+  - m_Path: root/Pierna_L/Rodilla_L
+    m_Weight: 1
+  - m_Path: root/Pierna_L/Rodilla_L/Pie_L
+    m_Weight: 1
+  - m_Path: root/Pierna_L/Rodilla_L/Pie_L/DedosPies_L
+    m_Weight: 1
+  - m_Path: root/Pierna_R
+    m_Weight: 0
+  - m_Path: root/Pierna_R/Rodilla_R
+    m_Weight: 1
+  - m_Path: root/Pierna_R/Rodilla_R/Pie_R
+    m_Weight: 1
+  - m_Path: root/Pierna_R/Rodilla_R/Pie_R/DedosPies_R
+    m_Weight: 1
+  - m_Path: root/Spine_1
+    m_Weight: 1
+  - m_Path: root/Spine_1/Spine_2
+    m_Weight: 1
+  - m_Path: root/Spine_1/Spine_2/Spine_3
+    m_Weight: 1
+  - m_Path: root/Spine_1/Spine_2/Spine_3/Hombro_L
+    m_Weight: 1
+  - m_Path: root/Spine_1/Spine_2/Spine_3/Hombro_L/Codo_L
+    m_Weight: 1
+  - m_Path: "root/Spine_1/Spine_2/Spine_3/Hombro_L/Codo_L/Mu\xF1eca_L"
+    m_Weight: 1
+  - m_Path: "root/Spine_1/Spine_2/Spine_3/Hombro_L/Codo_L/Mu\xF1eca_L/Mano_L"
+    m_Weight: 1
+  - m_Path: "root/Spine_1/Spine_2/Spine_3/Hombro_L/Codo_L/Mu\xF1eca_L/Mano_L/Dedos_L"
+    m_Weight: 1
+  - m_Path: root/Spine_1/Spine_2/Spine_3/Hombro_R
+    m_Weight: 1
+  - m_Path: root/Spine_1/Spine_2/Spine_3/Hombro_R/Codo_R
+    m_Weight: 1
+  - m_Path: "root/Spine_1/Spine_2/Spine_3/Hombro_R/Codo_R/Mu\xF1eca_R"
+    m_Weight: 1
+  - m_Path: "root/Spine_1/Spine_2/Spine_3/Hombro_R/Codo_R/Mu\xF1eca_R/Mano_R"
+    m_Weight: 1
+  - m_Path: "root/Spine_1/Spine_2/Spine_3/Hombro_R/Codo_R/Mu\xF1eca_R/Mano_R/Dedos_R"
+    m_Weight: 1
+  - m_Path: root/Spine_1/Spine_2/Spine_3/Neck
+    m_Weight: 1
+  - m_Path: root/Spine_1/Spine_2/Spine_3/Neck/Head
+    m_Weight: 1
+  - m_Path: root/Spine_1/Spine_2/Spine_3/Neck/Head/Head_top
+    m_Weight: 1

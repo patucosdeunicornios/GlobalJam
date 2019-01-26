@@ -17,9 +17,12 @@ public class Transporter : MonoBehaviour
         if (other.gameObject.tag.Equals("Player"))
         {
             Debug.Log("entered");
-
+                    
             other.transform.Translate(destination.transform.position);
-            other.gameObject.transform.position = destination.transform.position;
+
+            HeroController hero = other.GetComponent<HeroController>();
+            hero.teleport(destination.transform.position);
+            // other.transform.position = destination.transform.position;
         }
     }
     
