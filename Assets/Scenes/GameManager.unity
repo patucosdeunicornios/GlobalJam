@@ -158,7 +158,7 @@ Prefab:
     - target: {fileID: 224643340608266822, guid: a05b7657742ae5b41bc8398722e0b16a,
         type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 224643340608266822, guid: a05b7657742ae5b41bc8398722e0b16a,
         type: 2}
@@ -297,8 +297,14 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &285741747 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114894913849973970, guid: a05b7657742ae5b41bc8398722e0b16a,
+    type: 2}
+  m_PrefabInternal: {fileID: 7969659}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &326734669
 Prefab:
   m_ObjectHideFlags: 0
@@ -482,7 +488,7 @@ Transform:
   m_LocalScale: {x: 30, y: 1, z: 30}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &428971158
 GameObject:
@@ -544,7 +550,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &534669902
 GameObject:
@@ -637,10 +643,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverCanvas: {fileID: 1994705941}
   gameWinCanvas: {fileID: 1448253656}
-  timeLimit: 100
+  timeLimit: 1
   kids: []
   restartButon: {fileID: 1058877674}
   exitButton: {fileID: 1309234312}
+  scoreText: {fileID: 285741747}
   childsToFind: 0
 --- !u!1 &863750068
 GameObject:
@@ -725,7 +732,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &957591542
 Prefab:
@@ -764,7 +771,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4447199812666764, guid: 2e0d90850590fef4b85d2adb0ffa52f0, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e0d90850590fef4b85d2adb0ffa52f0, type: 2}
@@ -865,7 +872,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1448253656 stripped
 GameObject:
