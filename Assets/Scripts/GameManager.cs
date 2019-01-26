@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] kids;
     string kidsName;
     public Button restartButon, exitButton;
+    public InputField InputNameField;
     Text lessTimeText, childsToFindText;
     Text scoreText;
 
@@ -47,6 +48,7 @@ public class GameManager : MonoBehaviour
 
         restartButon.onClick.AddListener(() => { RestartGame(); });
         exitButton.onClick.AddListener(() => { exitGame(); });
+        InputNameField.onEndEdit.AddListener(delegate { endGame(); });
 
     }
 
@@ -54,10 +56,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown("space"))
-        {
-            RestChild();
-        }
+        
 
         if (!gameOver)
         {
@@ -65,6 +64,10 @@ public class GameManager : MonoBehaviour
             callTime();
             lessTimeText.text = "Segundos Restante: " + currentTime.ToString();
             childsToFindText.text = "Niños Restantes: " + childsToFind;
+            if (Input.GetKeyDown("space"))
+            {
+                RestChild();
+            }
         }
     }
 
@@ -106,18 +109,26 @@ public class GameManager : MonoBehaviour
     void RestChild()
     {
         childsToFind -= 1;
+        currentTime += 50;
         if (childsToFind <= 0)
         {
             gameOver = true;
             //int value = (int)currentTime;
             //Debug.Log(DataControler);
-            DataControler.saveData("fran", currentTime);
             gameCanvas.SetActive(false);
             gameWinCanvas.SetActive(true);
-
-            scoreText = GameObject.Find("Score").GetComponent<Text>();
             scoreText.text = "Segundos restantes: " + currentTime;
         }
+    }
+
+    void endGame()
+    {
+        string name = InputNameField.text.ToString();
+
+        DataControler.saveData(name, currentTime);
+        scoreText = GameObject.Find("Score").GetComponent<Text>();
+        
+        exitGame();
     }
 
 }
