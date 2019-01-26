@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
 
     DataControler DataControler = new DataControler();
 
@@ -30,7 +31,10 @@ public class GameManager : MonoBehaviour {
     }
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
+
+        gameCanvas = GameObject.Find("GameCanvas");
         kids = GameObject.FindGameObjectsWithTag("kid");
         childsToFind = kids.Length;
 
@@ -38,18 +42,17 @@ public class GameManager : MonoBehaviour {
         lessTimeText.text = "Segundos Restante: " + currentTime.ToString();
 
         childsToFindText = GameObject.Find("childsToFind").GetComponent<Text>();
-        childsToFindText.text = "Niños Restantes: "+ childsToFind;
+        childsToFindText.text = "Niños Restantes: " + childsToFind;
 
-        scoreText = GameObject.Find("Score").GetComponent<Text>();
 
         restartButon.onClick.AddListener(() => { RestartGame(); });
         exitButton.onClick.AddListener(() => { exitGame(); });
 
-        gameCanvas = GameObject.Find("GameCanvas");
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
 
         if (Input.GetKeyDown("space"))
         {
@@ -109,10 +112,14 @@ public class GameManager : MonoBehaviour {
             //int value = (int)currentTime;
             //Debug.Log(DataControler);
             DataControler.saveData("fran", currentTime);
-            scoreText.text = "Segundos restantes: "+ currentTime;
             gameCanvas.SetActive(false);
             gameWinCanvas.SetActive(true);
+
+
+            scoreText = GameObject.Find("Score").GetComponent<Text>();
+
             
+            scoreText.text = "Segundos restantes: " + currentTime;
         }
     }
 

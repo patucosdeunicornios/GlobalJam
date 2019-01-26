@@ -15,16 +15,8 @@ public class DataControler
     {
 
         dataPath = Path.Combine(Application.persistentDataPath, "HighScore.json");
-        /* Debug.Log(value);
-        using (StreamWriter streamWriter = File.CreateText(value))
-        {
-            streamWriter.Write(value);
-        }*/
         score.addData(new PlayerData(nombre, value));
-        //PlayerData PlayerData = new PlayerData(nombre, value);
-
         string json = JsonUtility.ToJson(score);
-        Debug.Log(json);
         using (StreamWriter streamWriter = File.CreateText(dataPath))
         {
             streamWriter.Write(json);
@@ -34,21 +26,16 @@ public class DataControler
     public void readData()
     {
         dataPath = Path.Combine(Application.persistentDataPath, "HighScore.json");
-        
+
         if (File.Exists(dataPath))
         {
-            //score = new Score(JsonUtility.FromJson<Score>(dataPath));
-            Debug.Log(dataPath);
+            string dataAsJson = File.ReadAllText(dataPath);
 
-
-            //JsonUtility.FromJsonOverwrite(dataPath, score);
-            
-
-            //foreach(PlayerData data in playerData)
-            //{
-            //    score.addData(data);
-            //    Debug.Log("Scores: " + score);
-            //}
+            score = JsonUtility.FromJson<Score>(dataAsJson);
+            foreach(PlayerData data in score.scores)
+            {
+               Debug.Log("Scores: " + data.name+" points:"+data.value);
+            }
         }
     }
 }
