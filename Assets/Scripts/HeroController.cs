@@ -34,35 +34,29 @@ public class HeroController : MonoBehaviour
 
     void FixedUpdate()
     {
-        // if (isTransporting)
-        //     return;
+        if (isTransporting)
+            return;
 
-        // Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
-        // if (Input.GetKey(KeyCode.LeftShift))
-        // {
-        //     Speed = MaxSpeed;
-        // }
-        // else
-        // {
-        //     Speed = SpeedInitial;
-        // }
-        // _controller.Move(move * Time.deltaTime * Speed);
-        // if (move != Vector3.zero)
-        // {
-        //     transform.forward = move;
-        // }
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            Speed = MaxSpeed;
+        }
+        else
+        {
+            Speed = SpeedInitial;
+        }
+        _controller.Move(move * Time.deltaTime * Speed);
+        if (move != Vector3.zero)
+        {
+            transform.forward = move;
+        }
 
-
-        // float moveAnim = _controller.velocity.magnitude;
-        // anim.SetFloat("speed", moveAnim);
-
+        float moveAnim = _controller.velocity.magnitude;
+        anim.SetFloat("speed", moveAnim);
     }
 
-
-    void oldFixed(){
-        
-    }
     void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "Obstaculo")

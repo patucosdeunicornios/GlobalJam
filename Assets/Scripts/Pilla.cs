@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class Pilla : MonoBehaviour
 {
     public NavMeshAgent agent;
+    public HidderPlayer hidder;
 
     void Start()
     {
@@ -18,6 +19,7 @@ public class Pilla : MonoBehaviour
         {
             Debug.Log("pillado");
             agent.Stop();
+            hidder.destroy();
         }
     }
 }

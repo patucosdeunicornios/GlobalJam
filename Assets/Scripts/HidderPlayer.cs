@@ -41,5 +41,16 @@ public class HidderPlayer : MonoBehaviour
         noiseManager.hearSound(this);
     }
 
+    public void destroy(){
+        StartCoroutine(destroyObj());
+    }
+
+
+    IEnumerator destroyObj()
+    {
+        yield return new WaitForSeconds(3);
+        Destroy(gameObject);
+    }
+
 
 }
