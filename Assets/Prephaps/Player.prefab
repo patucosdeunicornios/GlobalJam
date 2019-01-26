@@ -888,9 +888,10 @@ GameObject:
   - component: {fileID: 4833721855429825310}
   - component: {fileID: 4833721855422053578}
   - component: {fileID: 4833721855813061026}
-  - component: {fileID: 4833721855813061025}
+  - component: {fileID: 1746951474481070151}
   - component: {fileID: 5731289369655870492}
   - component: {fileID: 5645538885609892432}
+  - component: {fileID: 6039469579158456192}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -951,7 +952,7 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1.07, z: 0}
---- !u!114 &4833721855813061025
+--- !u!114 &1746951474481070151
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -960,12 +961,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 4833721855429332862}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cd44b7c0be6cd04dac982b8f540aead, type: 3}
+  m_Script: {fileID: 11500000, guid: c6d79e68ef6d5fd4cad104efd54fe018, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
-  jumpSpeed: 8
-  gravity: 20
+  Speed: 5
+  JumpForce: 1.2
+  Gravity: -9.81
+  GroundDistance: 0.2
+  Run: 2
+  Ground:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &5731289369655870492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1075,3 +1081,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &6039469579158456192
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4833721855429332862}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.98, z: 0}

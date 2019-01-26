@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ebfe0ec89fd09094d9cd69a3bb03730d
+guid: 3ec70a9869c934f4ab75ab5c51c3f984
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -26,10 +26,10 @@ ModelImporter:
     100040: Rodilla_L
     100042: Rodilla_R
     100044: root
-    100046: Spine_1
-    100048: Spine_2
-    100050: Spine_3
-    100052: //RootNode
+    100046: //RootNode
+    100048: Spine_1
+    100050: Spine_2
+    100052: Spine_3
     400000: Codo_L
     400002: Codo_R
     400004: Dedos_L
@@ -53,10 +53,10 @@ ModelImporter:
     400040: Rodilla_L
     400042: Rodilla_R
     400044: root
-    400046: Spine_1
-    400048: Spine_2
-    400050: Spine_3
-    400052: //RootNode
+    400046: //RootNode
+    400048: Spine_1
+    400050: Spine_2
+    400052: Spine_3
     2100000: lambert1
     4300000: polySurface1
     7400000: Take 001

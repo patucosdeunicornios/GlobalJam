@@ -10,6 +10,8 @@ public class NoiseManager : MonoBehaviour
     public SoundWaves wave;
 
     AudioSource audioSource;
+    SoundWaves currentWave;
+    HidderPlayer enemy;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +26,11 @@ public class NoiseManager : MonoBehaviour
         if (Input.GetKeyDown("space"))
         {
             clap();
+        }
+
+        if (currentWave)
+        {
+            followWave();
         }
     }
 
@@ -53,9 +60,9 @@ public class NoiseManager : MonoBehaviour
     }
 
 
-    public void hearSound(Vector3 positionSound)
+    public void hearSound(HidderPlayer player)
     {
-        spawnWaves(positionSound);
+        spawnWaves(player);
     }
 
     public float getIntensity(Vector3 positionSound)
@@ -65,19 +72,36 @@ public class NoiseManager : MonoBehaviour
         return 9 - (distance / 9) * 3;
     }
 
-    public void spawnWaves(Vector3 positionSound)
+    public void followWave()
     {
-
-
+        Vector3 positionSound = enemy.transform.position;
         Vector3 direction = getPointVector(positionSound);
-        Debug.DrawLine(transform.position, direction, Color.red, 5);
+        currentWave.transform.position = direction;
+        currentWave.transform.LookAt(positionSound);
+
+        Debug.DrawLine(transform.position, direction, Color.red, 3f);
+
         int intensity = (int)getIntensity(positionSound);
         if (intensity < 1)
             return;
-        SoundWaves obj = Instantiate<SoundWaves>(wave, transform);
-        obj.transform.position = direction;
-        obj.transform.LookAt(positionSound);
 
-        obj.setIntensity(intensity);
+
+        currentWave.setIntensity(intensity);
+    }
+
+    public void spawnWaves(HidderPlayer player)
+    {
+        Vector3 positionSound = player.transform.position;
+        if (currentWave && enemy)
+        {
+            float distanceNew = Vector3.Distance(positionSound, transform.position);
+            float distanceCurrent = Vector3.Distance(enemy.transform.position, transform.position);
+            if(distanceNew > distanceCurrent)
+                return;
+        }
+
+        enemy = player;
+        SoundWaves obj = Instantiate<SoundWaves>(wave, transform);
+        currentWave = obj;
     }
 }

@@ -18,11 +18,16 @@ public class Character : MonoBehaviour
     private Transform _groundChecker;
 
 
+    Animator anim;
+
+
     void Start()
     {
         SpeedInitial= Speed;
         _controller = GetComponent<CharacterController>();
         _groundChecker = transform.GetChild(0);
+
+         anim = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -41,11 +46,19 @@ public class Character : MonoBehaviour
         if (move != Vector3.zero){
             transform.forward = move ;
         }
+
+        
+        float moveAnim = _controller.velocity.magnitude;
+        anim.SetFloat("speed", moveAnim );
+        Debug.Log(moveAnim);
        
         _velocity.y += Gravity * Time.deltaTime;
 
         if (_isGrounded && _velocity.y < 0)
             _velocity.y = 0f;
+
+
+            
 
         _controller.Move(_velocity * Time.deltaTime);
 
