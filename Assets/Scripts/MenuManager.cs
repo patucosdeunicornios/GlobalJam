@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour {
 
-
+    DataControler DataControler = new DataControler();
     Button newGameButton, scoreButton, exitButton;
 
 	// Use this for initialization
@@ -36,6 +36,7 @@ public class MenuManager : MonoBehaviour {
     void LoadScores()
     {
         Debug.Log("Boton cargar scores pulsado");
+        DataControler.readData();
     }
 
     void Exit()

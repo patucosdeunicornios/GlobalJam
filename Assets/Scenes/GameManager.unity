@@ -210,6 +210,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224620621392633126, guid: a05b7657742ae5b41bc8398722e0b16a,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 80
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a05b7657742ae5b41bc8398722e0b16a, type: 2}
   m_IsPrefabAsset: 0
@@ -643,7 +648,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverCanvas: {fileID: 1994705941}
   gameWinCanvas: {fileID: 1448253656}
-  timeLimit: 1
+  timeLimit: 10
   kids: []
   restartButon: {fileID: 1058877674}
   exitButton: {fileID: 1309234312}
