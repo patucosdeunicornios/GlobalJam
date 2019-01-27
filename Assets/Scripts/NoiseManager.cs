@@ -16,6 +16,8 @@ public class NoiseManager : MonoBehaviour
     private Animator anim;
     public AudioClip stepClip;
 
+    public float timeToClap = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,11 +27,17 @@ public class NoiseManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space") && timeToClap <= 0)
         {
+            timeToClap = 1f;
             clap();
+        }
+
+        if (timeToClap > 0)
+        {
+            timeToClap -= Time.deltaTime;
         }
 
         if (currentWave)
@@ -40,7 +48,7 @@ public class NoiseManager : MonoBehaviour
 
     void clap()
     {
-        
+
         anim.Play("clap");
         broadcastClap();
     }
@@ -51,7 +59,7 @@ public class NoiseManager : MonoBehaviour
         audioSource.PlayOneShot(audioSource.clip);
     }
 
-    
+
     void step()
     {
         Debug.Log("play stemp");
@@ -104,21 +112,25 @@ public class NoiseManager : MonoBehaviour
         int intensity = (int)getIntensity(positionSound);
         if (intensity < 1)
             return;
-
-
         currentWave.setIntensity(intensity);
     }
 
     public void spawnWaves(HidderPlayer player)
     {
         Vector3 positionSound = player.transform.position;
+
         if (currentWave && enemy)
         {
             float distanceNew = Vector3.Distance(positionSound, transform.position);
             float distanceCurrent = Vector3.Distance(enemy.transform.position, transform.position);
             if (distanceNew > distanceCurrent)
                 return;
+            else
+            {
+                currentWave.destroy();
+            }
         }
+
 
         enemy = player;
         SoundWaves obj = Instantiate<SoundWaves>(wave, transform);
