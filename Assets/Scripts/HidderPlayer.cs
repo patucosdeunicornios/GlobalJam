@@ -12,6 +12,7 @@ public class HidderPlayer : MonoBehaviour
     static int materialIdx = 0;
 
     public List<Material> materials;
+    public GameObject particleItem;
 
 
     // Start is called before the first frame update
@@ -69,15 +70,22 @@ public class HidderPlayer : MonoBehaviour
     {
         GetComponent<Animator>().SetBool("lost", true);
         audioSource.PlayOneShot(loseSound);
+
+        Vector3 thePosition;
         StartCoroutine(destroyObj());
     }
 
 
     IEnumerator destroyObj()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1.5f);
+        Instantiate(particleItem, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 
+    void step()
+    {
+
+    }
 
 }

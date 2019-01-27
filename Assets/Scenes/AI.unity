@@ -260,7 +260,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.06666667
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 23800000, guid: c94a6903d5109d648be9d99dff681682, type: 2}
 --- !u!1 &155426004
@@ -405,7 +405,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 988056742, guid: fc8af345878c34f45ae0bf61396542e2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.6228046
+      value: -4.39
       objectReference: {fileID: 0}
     - target: {fileID: 988056742, guid: fc8af345878c34f45ae0bf61396542e2, type: 3}
       propertyPath: m_LocalRotation.x
@@ -439,14 +439,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 988056741, guid: fc8af345878c34f45ae0bf61396542e2, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: f785eecf38f52934fb11a1cae3b98f98, type: 2}
+    - target: {fileID: 1388845555, guid: fc8af345878c34f45ae0bf61396542e2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 1388845555, guid: fc8af345878c34f45ae0bf61396542e2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -54.18
+      objectReference: {fileID: 0}
     - target: {fileID: 1604437126, guid: fc8af345878c34f45ae0bf61396542e2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 10.619869
       objectReference: {fileID: 0}
+    - target: {fileID: 988056741, guid: fc8af345878c34f45ae0bf61396542e2, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f785eecf38f52934fb11a1cae3b98f98, type: 2}
     - target: {fileID: 2141719560, guid: fc8af345878c34f45ae0bf61396542e2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 17.361706

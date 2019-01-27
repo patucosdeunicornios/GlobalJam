@@ -55,7 +55,7 @@ public class NoiseManager : MonoBehaviour
     void step()
     {
         Debug.Log("play stemp");
-        audioSource.PlayOneShot(stepClip, 0.2f);
+        audioSource.PlayOneShot(stepClip, 0.13f);
     }
 
 
