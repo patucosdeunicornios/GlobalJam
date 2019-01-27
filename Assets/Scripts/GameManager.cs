@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+
 
 public class GameManager : MonoBehaviour
 {
 
     DataControler DataControler = new DataControler();
+    private GameObject gameController;
 
     public GameObject gameOverCanvas, gameWinCanvas;
     GameObject gameCanvas;
@@ -59,9 +62,8 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Tiempo Restante: " + currentTime);
             callTime();
-            lessTimeText.text = "Segundos Restante: " + currentTime.ToString();
-            childsToFindText.text = "Niños Restantes: " + childsToFind;
-
+            lessTimeText.text = "Restart Seconds: " + currentTime.ToString();
+            childsToFindText.text = "Restarts Kids: " + childsToFind;
         }
     }
 
@@ -83,6 +85,8 @@ public class GameManager : MonoBehaviour
     {
         if (currentTime <= 0)
         {
+            //gameController = GameObject.FindGameObjectWithTag("GameController");
+            //Destroy(gameController);
             gameCanvas.SetActive(false);
             gameOverCanvas.SetActive(true);
             gameOver = true;
@@ -116,7 +120,15 @@ public class GameManager : MonoBehaviour
             //int value = (int)currentTime;
             //Debug.Log(DataControler);
             gameCanvas.SetActive(false);
-            gameWinCanvas.SetActive(true);
+            
+            if (DataControler.getWriteable(currentTime))
+            {
+                gameWinCanvas.SetActive(true);
+            } else
+            {
+                exitGame();
+            }
+
             scoreText.text = "Segundos restantes: " + currentTime;
         }
     }

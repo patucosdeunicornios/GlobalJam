@@ -103,7 +103,14 @@ public class DataControler : MonoBehaviour
 
         }
 
+    public bool getWriteable(float value)
+    {
+        checkData(value);
+        return writeable;
+    }
+
 }
+
 
 
 public class ReverserClass : IComparer<PlayerData>
