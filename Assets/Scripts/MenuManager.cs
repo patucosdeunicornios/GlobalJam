@@ -39,7 +39,7 @@ public class MenuManager : MonoBehaviour {
     void NewGame()
     {
         Debug.Log("Boton Juego nuevo pulsado");
-        SceneManager.LoadScene("GameManager");
+        SceneManager.LoadScene("Nivel_V2");
     }
 
     void LoadScores()
