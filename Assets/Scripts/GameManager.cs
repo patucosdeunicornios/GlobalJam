@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
         timeCounter = 0;
         currentTime = timeLimit;
         gameOver = false;
-        
+
     }
 
     // Use this for initialization
@@ -55,19 +55,13 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        
-
         if (!gameOver)
         {
             Debug.Log("Tiempo Restante: " + currentTime);
             callTime();
             lessTimeText.text = "Segundos Restante: " + currentTime.ToString();
             childsToFindText.text = "Niños Restantes: " + childsToFind;
-            if (Input.GetKeyDown("space"))
-            {
-                RestChild();
-            }
+
         }
     }
 
@@ -81,7 +75,7 @@ public class GameManager : MonoBehaviour
             //Restamos 1 segundo
             currentTime -= 1;
             //Mostramos el log      
-            checkGame();     
+            checkGame();
         }
     }
 
@@ -106,8 +100,14 @@ public class GameManager : MonoBehaviour
     }
 
 
-    void RestChild()
+    void RestChild(Vector3 position)
     {
+
+        if (position != Vector3.zero)
+        {
+            // Instantiate(particleItem, transform);
+        }
+
         childsToFind -= 1;
         currentTime += 50;
         if (childsToFind <= 0)
@@ -127,8 +127,9 @@ public class GameManager : MonoBehaviour
 
         DataControler.saveData(name, currentTime);
         scoreText = GameObject.Find("Score").GetComponent<Text>();
-        
+
         exitGame();
     }
+
 
 }

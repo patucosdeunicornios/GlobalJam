@@ -11,11 +11,12 @@ public class AiChild : MonoBehaviour
     private Animator anim;
 
     private ChildSpawner spawner;
-    private bool changed = false;
     AudioSource audioSource;
-    
-
     public AudioClip laught;
+
+    private bool hasLaugh = false;
+    private float timeFromLaught = 0;
+    public float timeMaxLaught = 10.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -34,17 +35,31 @@ public class AiChild : MonoBehaviour
     void Update()
     {
         anim.SetFloat("speed", agent.velocity.magnitude);
+
+        if (hasLaugh)
+        {
+            timeFromLaught += Time.deltaTime;
+
+            if (timeFromLaught >= timeMaxLaught)
+            {
+                timeFromLaught = 0;
+                hasLaugh = false;
+            }
+        }
     }
 
 
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("entered " + other.gameObject.tag);
-        if (other.gameObject.tag.Equals("Player") && !changed)
+        if (other.gameObject.tag.Equals("Player"))
         {
             Debug.Log("Found you");
-            audioSource.PlayOneShot(laught);
-            changed = true;
+            if (!hasLaugh)
+            {
+                audioSource.PlayOneShot(laught);
+                hasLaugh = true;
+            }
             agent.SetDestination(spawner.getNewSpawn().position);
         }
     }

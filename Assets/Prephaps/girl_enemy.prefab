@@ -671,7 +671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitForWave: 0.1
-  loseSound: {fileID: 8300000, guid: 9119665e8b959d74a9f52b481f506a86, type: 3}
+  loseSound: {fileID: 8300000, guid: 15ed58a5e48f7794b9baf5f8c0d14a6c, type: 3}
   materials:
   - {fileID: 2100000, guid: 2ab2ecb0ccbc98141aeece6bc9f6d3d7, type: 2}
   - {fileID: 2100000, guid: 1541288984ee4c545b38521fbe9da703, type: 2}
