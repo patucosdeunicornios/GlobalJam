@@ -8,7 +8,7 @@ public class SoundWaves : MonoBehaviour
     Component middle;
     Component lower;
 
-    public float secondsToLive = 1.5f;
+    public float secondsToLive = 0.6f;
     public float currentAge = 0;
 
     void Start()
@@ -90,5 +90,10 @@ public class SoundWaves : MonoBehaviour
             }
         }
 
+    }
+
+
+    public void destroy(){
+        Destroy(this);
     }
 }

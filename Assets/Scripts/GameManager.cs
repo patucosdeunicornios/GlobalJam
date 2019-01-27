@@ -74,6 +74,8 @@ public class GameManager : MonoBehaviour
             callTime();
             lessTimeText.text = "Seconds less: " + currentTime.ToString();
             childsToFindText.text = "second less: " + childsToFind;
+
+            escape();
         }
     }
 
@@ -102,6 +104,13 @@ public class GameManager : MonoBehaviour
             gameCanvas.SetActive(false);
             gameOverCanvas.SetActive(true);
             gameOver = true;
+        }
+    }
+
+    void escape(){
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            exitGame();
         }
     }
 
