@@ -677,6 +677,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 1541288984ee4c545b38521fbe9da703, type: 2}
   - {fileID: 2100000, guid: f1c2f1608841c9e4cba6b688507be9d6, type: 2}
   - {fileID: 2100000, guid: 355c1710a938fe548b936cd98037963a, type: 2}
+  particleItem: {fileID: 4653345117096871097, guid: f8b58e847f4f96140be463461c55df9a,
+    type: 3}
 --- !u!82 &9175017045181267797
 AudioSource:
   m_ObjectHideFlags: 0
