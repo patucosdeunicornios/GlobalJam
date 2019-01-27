@@ -29,7 +29,8 @@ public class DataControler : MonoBehaviour
             {
                 streamWriter.Write(json);
             }
-        } else { Debug.Log("no es wirteable"); }
+        }
+        else { Debug.Log("no es wirteable"); }
     }
 
     public void readData()
@@ -41,15 +42,15 @@ public class DataControler : MonoBehaviour
             string dataAsJson = File.ReadAllText(dataPath);
 
             score = JsonUtility.FromJson<Score>(dataAsJson);
-            foreach(PlayerData data in score.scores)
+            foreach (PlayerData data in score.scores)
             {
-               Debug.Log("Scores: " + data.name+" points:"+data.value);
+                Debug.Log("Scores: " + data.name + " points:" + data.value);
             }
         }
     }
 
     public void showData()
-    {  
+    {
 
         readData();
         sortData();
@@ -83,6 +84,7 @@ public class DataControler : MonoBehaviour
 
     public void sortData()
     {
+        dataPath = Path.Combine(Application.persistentDataPath, "HighScore.json");
         if (File.Exists(dataPath))
         {
             score.scores.Sort(CompareDistanceTravelled);
@@ -93,13 +95,14 @@ public class DataControler : MonoBehaviour
 
     public void checkData(float valueSave)
     {
-        readData();
-        sortData();
+        
+        dataPath = Path.Combine(Application.persistentDataPath, "HighScore.json");
         if (File.Exists(dataPath))
         {
-
-
-            if (5 < score.scores.Count)
+            readData();
+            sortData();
+            Debug.Log("Scores Guardados: "+score.scores.Count);
+            if (5 > score.scores.Count)
             {
                 writeable = true;
             }
@@ -108,7 +111,8 @@ public class DataControler : MonoBehaviour
                 score.scores.Remove(score.scores[4]);
                 writeable = true;
             }
-
+        } else {
+            writeable = true;
         }
     }
 
@@ -128,7 +132,7 @@ public class ReverserClass : IComparer<PlayerData>
     int IComparer<PlayerData>.Compare(PlayerData x, PlayerData y)
     {
 
-         return ((new CaseInsensitiveComparer()).Compare(y.value, x.value));
+        return ((new CaseInsensitiveComparer()).Compare(y.value, x.value));
         //return x.value.CompareTo(y.value);
     }
 }

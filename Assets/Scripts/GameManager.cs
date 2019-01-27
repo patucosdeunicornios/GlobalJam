@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     bool gameOver;
     public GameObject[] kids;
     string kidsName;
-    public Button restartButon, exitButton;
+    public Button restartButon, exitButton, exitButtonWin;
     public InputField InputNameField;
     Text lessTimeText, childsToFindText;
     Text scoreText;
@@ -39,6 +39,9 @@ public class GameManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        if (exitButtonWin == true){
+            exitButtonWin.gameObject.SetActive(false);
+        }
         
         timeCounter = 0;
         currentTime = timeLimit;
@@ -53,9 +56,12 @@ public class GameManager : MonoBehaviour
         childsToFindText = GameObject.Find("childsToFind").GetComponent<Text>();
         childsToFindText.text = "Niños Restantes: " + childsToFind;
 
+        
+
         restartButon.onClick.AddListener(() => { RestartGame(); });
         exitButton.onClick.AddListener(() => { exitGame(); });
         InputNameField.onEndEdit.AddListener(delegate { endGame(); });
+        exitButtonWin.onClick.AddListener(() => { exitGame(); });
 
     }
 
@@ -64,12 +70,11 @@ public class GameManager : MonoBehaviour
     {
         if (!gameOver)
         {
-            Debug.Log("Tiempo Restante: " + currentTime);
+            //Debug.Log("Tiempo Restante: " + currentTime);
             callTime();
-            lessTimeText.text = "Restart Seconds: " + currentTime.ToString();
-            childsToFindText.text = "Restarts Kids: " + childsToFind;
+            lessTimeText.text = "Seconds less: " + currentTime.ToString();
+            childsToFindText.text = "second less: " + childsToFind;
         }
-
     }
 
 
@@ -90,6 +95,8 @@ public class GameManager : MonoBehaviour
     {
         if (currentTime <= 0)
         {
+            GameObject hero = GameObject.Find("main");
+            hero.SetActive(false);
             //gameController = GameObject.FindGameObjectWithTag("GameController");
             //Destroy(gameController);
             gameCanvas.SetActive(false);
@@ -129,10 +136,15 @@ public class GameManager : MonoBehaviour
             if (DataControler.getWriteable(currentTime))
             {
                 gameWinCanvas.SetActive(true);
-                scoreText.text = "Segundos restantes: " + currentTime;
+                scoreText = GameObject.Find("Score").GetComponent<Text>();
+                scoreText.text = "seconds less: " + currentTime;
             } else
-            {
-                exitGame();
+            {    
+                gameWinCanvas.SetActive(true);
+                scoreText = GameObject.Find("Score").GetComponent<Text>();
+                scoreText.text = "seconds less: " + currentTime;
+                InputNameField.gameObject.SetActive(false);
+                exitButtonWin.gameObject.SetActive(true);
             }
 
             
@@ -141,10 +153,11 @@ public class GameManager : MonoBehaviour
 
     void endGame()
     {
+        
         string name = InputNameField.text.ToString();
 
         DataControler.saveData(name, currentTime);
-        scoreText = GameObject.Find("Score").GetComponent<Text>();
+        
 
         exitGame();
     }

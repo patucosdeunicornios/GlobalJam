@@ -97,8 +97,6 @@ public class HeroController : MonoBehaviour
             return;
         }
 
-        Debug.Log("Delay: " + delayed + " Stm"+stamina);
-        
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
