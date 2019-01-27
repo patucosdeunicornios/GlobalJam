@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
     {
         if (currentTime <= 0)
         {
-            GameObject hero = GameObject.FindGameObjectWithTag("Player");
+            GameObject hero = GameObject.Find("main");
             hero.SetActive(false);
             //gameController = GameObject.FindGameObjectWithTag("GameController");
             //Destroy(gameController);
