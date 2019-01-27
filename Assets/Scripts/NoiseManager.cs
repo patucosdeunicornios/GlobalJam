@@ -92,6 +92,8 @@ public class NoiseManager : MonoBehaviour
 
     public void followWave()
     {
+        if (!enemy)
+            return;
         Vector3 positionSound = enemy.transform.position;
         Vector3 direction = getPointVector(positionSound);
         currentWave.transform.position = direction;

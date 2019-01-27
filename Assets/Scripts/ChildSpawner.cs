@@ -64,4 +64,9 @@ public class ChildSpawner : MonoBehaviour
         int position = getRandomInt();
         return spawners[position].transform;
     }
+
+    public int getChilds()
+    {
+        return totalChilds;
+    }
 }

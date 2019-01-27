@@ -24,13 +24,14 @@ public class GameManager : MonoBehaviour
     public InputField InputNameField;
     Text lessTimeText, childsToFindText;
     Text scoreText;
+    public ChildSpawner childSpawner;
 
     public int childsToFind;
 
     void Awake()
     {
-        timeCounter = 0;
-        currentTime = timeLimit;
+        //timeCounter = 0;
+        //currentTime = timeLimit;
         gameOver = false;
 
     }
@@ -38,10 +39,13 @@ public class GameManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        
+        timeCounter = 0;
+        currentTime = timeLimit;
 
         gameCanvas = GameObject.Find("GameCanvas");
-        kids = GameObject.FindGameObjectsWithTag("kid");
-        childsToFind = kids.Length;
+        //kids = GameObject.FindGameObjectsWithTag("Enemy");
+        childsToFind = childSpawner.getChilds();
 
         lessTimeText = GameObject.Find("lessTime").GetComponent<Text>();
         lessTimeText.text = "Segundos Restante: " + currentTime.ToString();
@@ -65,6 +69,7 @@ public class GameManager : MonoBehaviour
             lessTimeText.text = "Restart Seconds: " + currentTime.ToString();
             childsToFindText.text = "Restarts Kids: " + childsToFind;
         }
+
     }
 
 
@@ -95,7 +100,7 @@ public class GameManager : MonoBehaviour
 
     void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
     }
 
     void exitGame()
@@ -104,13 +109,13 @@ public class GameManager : MonoBehaviour
     }
 
 
-    void RestChild(Vector3 position)
+    public void RestChild()
     {
 
-        if (position != Vector3.zero)
-        {
+       // if (position != Vector3.zero)
+       // {
             // Instantiate(particleItem, transform);
-        }
+       // }
 
         childsToFind -= 1;
         currentTime += 50;
@@ -124,12 +129,13 @@ public class GameManager : MonoBehaviour
             if (DataControler.getWriteable(currentTime))
             {
                 gameWinCanvas.SetActive(true);
+                scoreText.text = "Segundos restantes: " + currentTime;
             } else
             {
                 exitGame();
             }
 
-            scoreText.text = "Segundos restantes: " + currentTime;
+            
         }
     }
 

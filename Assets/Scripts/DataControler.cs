@@ -83,25 +83,34 @@ public class DataControler : MonoBehaviour
 
     public void sortData()
     {
-        score.scores.Sort(CompareDistanceTravelled);
-        Debug.Log("sort");
+        if (File.Exists(dataPath))
+        {
+            score.scores.Sort(CompareDistanceTravelled);
+            Debug.Log("sort");
+        }
+
     }
 
     public void checkData(float valueSave)
     {
         readData();
         sortData();
-
-        if (5 < score.scores.Count)
+        if (File.Exists(dataPath))
         {
-            writeable = true;
-        } else if(valueSave > score.scores[4].value)
-        {
-            score.scores.Remove(score.scores[4]);
-            writeable = true;
-        }
+
+
+            if (5 < score.scores.Count)
+            {
+                writeable = true;
+            }
+            else if (valueSave > score.scores[4].value)
+            {
+                score.scores.Remove(score.scores[4]);
+                writeable = true;
+            }
 
         }
+    }
 
     public bool getWriteable(float value)
     {

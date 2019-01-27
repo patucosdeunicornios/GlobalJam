@@ -20,6 +20,8 @@ public class HeroController : MonoBehaviour
     private bool isTransporting = false;
 
 
+    private float stamina = 50;
+
     Animator anim;
 
 
@@ -38,15 +40,23 @@ public class HeroController : MonoBehaviour
             return;
 
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        move = move.normalized;
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) && stamina >= 20)
         {
             Speed = MaxSpeed;
+            stamina -= 10 * Time.deltaTime;
         }
         else
         {
             Speed = SpeedInitial;
+            stamina += 5 * Time.deltaTime;
+            if (stamina > 50)
+                stamina = 50;
         }
+
+        Debug.Log(stamina);
+
         _controller.Move(move * Time.deltaTime * Speed);
         if (move != Vector3.zero)
         {
@@ -55,6 +65,12 @@ public class HeroController : MonoBehaviour
 
         float moveAnim = _controller.velocity.magnitude;
         anim.SetFloat("speed", moveAnim);
+    }
+
+
+    void sprint()
+    {
+
     }
 
     void OnCollisionEnter(Collision col)
