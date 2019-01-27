@@ -60,10 +60,13 @@ public class HeroController : MonoBehaviour
     void gravity()
     {
         if (isGrounded())
+        {
+            _velocity.y = 0f;
             return;
-        Vector3 move = new Vector3(0, 0, 0);
-        move.y = move.y - (20.0f * Time.deltaTime);
-        _controller.Move(move * Time.deltaTime);
+        }
+
+        _velocity.y += Gravity * Time.deltaTime;
+        _controller.Move(_velocity * Time.deltaTime);
     }
 
     void movement()
