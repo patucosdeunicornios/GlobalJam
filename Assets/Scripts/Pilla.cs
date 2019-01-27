@@ -23,12 +23,18 @@ public class Pilla : MonoBehaviour
                 return;
             }
             Debug.Log("pillado");
-            gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
             Collider colider = this.gameObject.GetComponent<Collider>();
-            colider.enabled = false;
-            gameManager.RestChild();         
+            colider.enabled = false;        
             agent.Stop();
             hidder.destroy();
+
+            GameObject obj = GameObject.Find("GameManager");
+            if (!obj)
+            {
+                return;
+            }
+            gameManager = obj.GetComponent<GameManager>();
+            gameManager.RestChild();
         }
     }
 }
