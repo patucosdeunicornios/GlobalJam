@@ -27,6 +27,7 @@ public class HeroController : MonoBehaviour
 
     void Start()
     {
+
         SpeedInitial = Speed;
         _controller = GetComponent<CharacterController>();
         _groundChecker = transform.GetChild(0);
