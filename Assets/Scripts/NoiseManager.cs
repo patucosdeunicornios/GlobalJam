@@ -29,7 +29,7 @@ public class NoiseManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKeyDown("space") && timeToClap <= 0)
+        if ( (Input.GetKeyDown("space") ||Input.GetButtonDown("Fire2")) && timeToClap <= 0)
         {
             timeToClap = 1f;
             clap();

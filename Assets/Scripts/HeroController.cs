@@ -101,7 +101,7 @@ public class HeroController : MonoBehaviour
         }
 
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetButton("Fire1"))
         {
             if (delayed <=0)
             {
