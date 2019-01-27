@@ -7,7 +7,9 @@ using UnityEngine.UI;
 public class MenuManager : MonoBehaviour {
 
     DataControler DataControler = new DataControler();
-    Button newGameButton, scoreButton, exitButton, menuButton;
+    Button newGameButton, scoreButton, exitButton, menuButton, helpButton, creditsButton;
+
+    public Canvas canvas, canvasHelp, canvasCredits;
 
     // Use this for initialization
     void Start () {
@@ -19,11 +21,16 @@ public class MenuManager : MonoBehaviour {
         scoreButton = GameObject.Find("Score").GetComponent<Button>();
         exitButton = GameObject.Find("Exit").GetComponent<Button>();
         menuButton = GameObject.Find("Menu").GetComponent<Button>();
+        helpButton = GameObject.Find("Help").GetComponent<Button>();
+        creditsButton = GameObject.Find("Creditos").GetComponent<Button>();
 
         newGameButton.onClick.AddListener(() => NewGame());
         scoreButton.onClick.AddListener(() => LoadScores());
         exitButton.onClick.AddListener(() => Exit());
         menuButton.onClick.AddListener(() => HideScores());
+        newGameButton.onClick.AddListener(() => NewGame());
+        helpButton.onClick.AddListener(() => HelpPage());
+        creditsButton.onClick.AddListener(() => CreditsPage());
 
     }
 	
@@ -31,7 +38,13 @@ public class MenuManager : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Escape))
         {
-            HideScores();
+            if (canvasHelp.gameObject.active){
+                HideHelpPage();
+            } else if (canvasCredits.gameObject.active)
+            {
+                HideCreditsPage();
+            }
+            
         }
 	}
 
@@ -61,6 +74,26 @@ public class MenuManager : MonoBehaviour {
 
         GameObject CanvasGameObject2 = GameObject.Find("MenuCanvas");
         CanvasGameObject2.GetComponent<Canvas>().enabled = true;
+    }
+
+    void HelpPage(){
+        canvas.gameObject.SetActive(false);
+        canvasHelp.gameObject.SetActive(true);
+    }
+
+    void HideHelpPage(){
+        canvas.gameObject.SetActive(true);
+        canvasHelp.gameObject.SetActive(false);
+    }
+
+    void CreditsPage(){
+        canvas.gameObject.SetActive(false);
+        canvasCredits.gameObject.SetActive(true);
+    }
+
+    void HideCreditsPage(){
+        canvas.gameObject.SetActive(true);
+        canvasCredits.gameObject.SetActive(false);
     }
 
 }
