@@ -55,7 +55,7 @@ public class HeroController : MonoBehaviour
                 stamina = 50;
         }
 
-        Debug.Log(stamina);
+        //Debug.Log(stamina);
 
         _controller.Move(move * Time.deltaTime * Speed);
         if (move != Vector3.zero)
