@@ -1,75 +1,20 @@
 fileFormatVersion: 2
-guid: 857b1b9fffa2f8642aa8c6743e2937c2
+guid: 48c7af6304df93c4e94db5b8926cb611
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: pCube10
-    100004: Pila
-    100006: polySurface25
-    100008: polySurface27
-    100010: polySurface28
-    100012: polySurface28 1
-    100014: polySurface30
-    100016: polySurface31
-    100018: polySurface32
-    100020: polySurface33
-    100022: polySurface33 1
-    100024: polySurface34
-    100026: polySurface35
-    100028: polySurface36
-    100030: transform41
-    100032: transform42
-    100034: transform43
-    100036: transform44
-    100038: transform45
-    100040: transform46
-    100042: transform47
-    100044: transform48
-    100046: transform49
-    100048: transform50
-    100050: transform51
-    100052: transform52
-    100054: transform53
     400000: //RootNode
-    400002: pCube10
-    400004: Pila
-    400006: polySurface25
-    400008: polySurface27
-    400010: polySurface28
-    400012: polySurface28 1
-    400014: polySurface30
-    400016: polySurface31
-    400018: polySurface32
-    400020: polySurface33
-    400022: polySurface33 1
-    400024: polySurface34
-    400026: polySurface35
-    400028: polySurface36
-    400030: transform41
-    400032: transform42
-    400034: transform43
-    400036: transform44
-    400038: transform45
-    400040: transform46
-    400042: transform47
-    400044: transform48
-    400046: transform49
-    400048: transform50
-    400050: transform51
-    400052: transform52
-    400054: transform53
     2100000: lambert1
-    2300000: polySurface33
-    3300000: polySurface33
-    4300000: polySurface33
-    6400000: polySurface33
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Lavadora
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert1
-    second: {fileID: 2100000, guid: 79d92172446fa524c88c88289cca6f87, type: 2}
+    second: {fileID: 2100000, guid: 5f900ba61af2e0c42a19712f95783b60, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -102,7 +47,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
