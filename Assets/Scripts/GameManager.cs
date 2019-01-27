@@ -72,8 +72,8 @@ public class GameManager : MonoBehaviour
         {
             //Debug.Log("Tiempo Restante: " + currentTime);
             callTime();
-            lessTimeText.text = "Seconds less: " + currentTime.ToString();
-            childsToFindText.text = "second less: " + childsToFind;
+            lessTimeText.text = "Seconds: " + currentTime.ToString();
+            childsToFindText.text = "Kids left: " + childsToFind;
 
             escape();
         }
