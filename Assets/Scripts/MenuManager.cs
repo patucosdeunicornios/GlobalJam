@@ -11,6 +11,10 @@ public class MenuManager : MonoBehaviour {
 
     public Canvas canvas, canvasHelp, canvasCredits;
 
+    public AudioClip menuClip;
+    public AudioClip creditsClip;
+
+    public AudioSource audioSource;
     // Use this for initialization
     void Start () {
 
@@ -89,11 +93,21 @@ public class MenuManager : MonoBehaviour {
     void CreditsPage(){
         canvas.gameObject.SetActive(false);
         canvasCredits.gameObject.SetActive(true);
+        playClip(creditsClip);
     }
+
 
     void HideCreditsPage(){
         canvas.gameObject.SetActive(true);
         canvasCredits.gameObject.SetActive(false);
+        playClip(menuClip);
+    }
+
+
+    void playClip(AudioClip clip)
+    {
+        audioSource.clip = clip;
+        audioSource.Play();
     }
 
 }

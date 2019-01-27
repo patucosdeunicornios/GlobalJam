@@ -61,10 +61,15 @@ public class DataControler : MonoBehaviour
         CanvasGameObject.GetComponent<Canvas>().enabled = true;
 
         GameObject[] gameTextObject = GameObject.FindGameObjectsWithTag("Score");
+        if (score.scores.ToArray().Length > 0) {      
 
         for (int i = 0; i < score.scores.Count; i++)
         {
             gameTextObject[i].GetComponent<Text>().text = score.scores[i].name + ":     " + score.scores[i].value;
+        }
+        } else
+        {
+            gameTextObject[0].GetComponent<Text>().text = "There are no Records";
         }
     }
 
