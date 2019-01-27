@@ -12,6 +12,10 @@ public class AiChild : MonoBehaviour
 
     private ChildSpawner spawner;
     private bool changed = false;
+    AudioSource audioSource;
+    
+
+    public AudioClip laught;
 
     // Start is called before the first frame update
     void Start()
@@ -19,25 +23,27 @@ public class AiChild : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         spawner = FindObjectOfType<ChildSpawner>();
+        audioSource = GetComponent<AudioSource>();
 
         if (destination)
             agent.SetDestination(destination.position);
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        anim.SetFloat("speed", agent.velocity.magnitude );
+        anim.SetFloat("speed", agent.velocity.magnitude);
     }
 
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("entered "+other.gameObject.tag);
+        Debug.Log("entered " + other.gameObject.tag);
         if (other.gameObject.tag.Equals("Player") && !changed)
         {
             Debug.Log("Found you");
+            audioSource.PlayOneShot(laught);
             changed = true;
             agent.SetDestination(spawner.getNewSpawn().position);
         }

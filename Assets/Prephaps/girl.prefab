@@ -184,6 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 5
   JumpForce: 1.2
+  MaxSpeed: 10
   Gravity: -9.81
   GroundDistance: 0.2
   Run: 2
@@ -213,7 +214,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7f7b437444d62c6408e2effa789ee822, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 105c1306136663e41beb5d1618bba630, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
