@@ -1735,12 +1735,13 @@ MonoBehaviour:
   Speed: 3
   JumpForce: 1.2
   MaxSpeed: 5
-  Gravity: 0
+  Gravity: -9.8
   GroundDistance: 0.2
   Run: 2
   Ground:
     serializedVersion: 2
     m_Bits: 0
+  maxStamina: 35
 --- !u!1 &4147848798760469239
 GameObject:
   m_ObjectHideFlags: 0
