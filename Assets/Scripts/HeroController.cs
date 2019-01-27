@@ -38,6 +38,7 @@ public class HeroController : MonoBehaviour
             return;
 
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        move = move.normalized;
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -47,6 +48,8 @@ public class HeroController : MonoBehaviour
         {
             Speed = SpeedInitial;
         }
+
+
         _controller.Move(move * Time.deltaTime * Speed);
         if (move != Vector3.zero)
         {

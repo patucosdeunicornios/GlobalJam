@@ -590,7 +590,7 @@ Transform:
   m_GameObject: {fileID: 988056738}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.33, y: -3.56, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.73, y: 0.73, z: 0.73}
   m_Children:
   - {fileID: 830286499}
   - {fileID: 539370544}
@@ -631,7 +631,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 7
+  m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -658,6 +658,7 @@ MonoBehaviour:
   destination: {fileID: 0}
   agent: {fileID: 988056739}
   laught: {fileID: 8300000, guid: 612f31630aec3d04aad3aeecffa82ab2, type: 3}
+  timeMaxLaught: 10
 --- !u!114 &5945963489551481537
 MonoBehaviour:
   m_ObjectHideFlags: 0
