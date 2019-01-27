@@ -289,7 +289,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3e365d7159273354a9f1135257bb51fc, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1720,6 +1720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wave: {fileID: 2026116735684435446, guid: 8884a3a8893d3f54c981a9c7297a9d33, type: 3}
   stepClip: {fileID: 8300000, guid: 173360f187d2d0c4b83221f7c38e7e91, type: 3}
+  timeToClap: 0
 --- !u!114 &8411083122488674994
 MonoBehaviour:
   m_ObjectHideFlags: 0
