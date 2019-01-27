@@ -21,7 +21,7 @@ public class HidderPlayer : MonoBehaviour
         // InvokeRepeating("makeNoise", 2.0f, 5f);
         noiseManager = (NoiseManager)FindObjectsOfType<NoiseManager>()[0];
         audioSource = GetComponent<AudioSource>();
-        //ChangeMaterial(materials[materialIdx]);
+        ChangeMaterial(materials[materialIdx % materials.ToArray().Length]);
     }
 
     void ChangeMaterial(Material newMat)
