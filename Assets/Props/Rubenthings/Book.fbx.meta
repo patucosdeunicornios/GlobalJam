@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8ff1b36a70dd9314a88919f8623fc394
+guid: c5bee687b7f19c94c87cf94998e6c760
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -8,13 +8,13 @@ ModelImporter:
     2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Ventana
+    4300000: Libro
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert1
-    second: {fileID: 2100000, guid: 0d82e00427ccbc843bdb614736073135, type: 2}
+    second: {fileID: 2100000, guid: 2a621ab456fff9346a2d00468eebfb22, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
